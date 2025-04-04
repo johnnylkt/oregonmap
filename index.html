@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oregon County Map - Building Codes Division</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="map-container">
+            <div style="padding: 20px; text-align: center;">
+                <p>Loading Oregon county map...</p>
+                <svg width="50" height="50" viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="20" fill="none" stroke="#003087" stroke-width="5" stroke-dasharray="60 30">
+                        <animateTransform attributeName="transform" attributeType="XML" type="rotate" 
+                            from="0 25 25" to="360 25 25" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                </svg>
+            </div>
+        </div>
+        
+        <div id="region-cards-container"></div>
+        
+        <div id="info-panel" class="hidden">
+            <span class="close-btn" onclick="closePanel()">&times;</span>
+            <h2 id="region-title"></h2>
+            <div id="investigator-info"></div>
+        </div>
+    </div>
+    <script type="importmap">
+    {
+        "imports": {
+            "d3": "https://cdn.jsdelivr.net/npm/d3@7/+esm",
+            "topojson-client": "https://cdn.jsdelivr.net/npm/topojson-client@3/+esm"
+        }
+    }
+    </script>
+    <script type="module" src="mapRenderer.js"></script>
+    <script type="module" src="regionData.js"></script>
+</body>
+</html>
+
